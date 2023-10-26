@@ -13,7 +13,7 @@ async function addHarjoitus() {
                 "aika": tiedot[3].value
                 }
 
-    const response = await fetch('http://localhost:3000/harjoitukset/', {
+    const response = await fetch('https://13.48.71.112:443/harjoitukset/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ async function loadLog() {
     document.getElementById('statInfo').innerHTML = 'Ei harjoituksia valitulla aikavälillä'
     let logList = document.getElementById('log-list')    
 
-    const response = await fetch('http://localhost:3000/harjoitukset/')
+    const response = await fetch('https://13.48.71.112:443/harjoitukset/')
     const data = await response.json()
 
     if (data.length === 0){
@@ -132,7 +132,7 @@ function createHarjoitusItem(harjoitus) {
   }
 
   async function poistaHarjoitus(id) {
-    const response = await fetch('http://localhost:3000/harjoitukset/'+id, {
+    const response = await fetch('https://13.48.71.112:443/harjoitukset/'+id, {
         method: 'DELETE'
     })
     let responseJson = await response.json()
