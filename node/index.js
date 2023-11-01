@@ -5,6 +5,7 @@ const port = 3000
 
 app.use(cors())
 app.use(express.json())
+app.use(express.static('public'))
 
 // Tietokantayhteys
 
@@ -26,6 +27,11 @@ const harjoitusSchema = new mongoose.Schema({
 })
 
 const Harjoitus = mongoose.model('Harjoitus', harjoitusSchema, 'harjoitukset')
+
+app.get('/', (request, response) => {    
+    response.sendFile(__dirname, 'public/index.html')
+    
+})
 
 app.get('/harjoitukset', async (request, response) => {
     const harjoitukset = await Harjoitus.find({})
