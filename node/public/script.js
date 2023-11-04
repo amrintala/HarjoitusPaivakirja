@@ -9,8 +9,8 @@ async function addHarjoitus() {
     let tiedot = document.querySelectorAll('input')    
     let data = {"pvm": tiedot[0].value,
                 "matka": tiedot[1].value,
-                "syke": tiedot[2].value,
-                "aika": tiedot[3].value
+                "aika": tiedot[2].value,
+                "syke": tiedot[3].value
                 }
 
     const response = await fetch('http://172.21.6.136:3000/harjoitukset/', {
