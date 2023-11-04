@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fi">
+    <head>
+        <title>Harjoittelupäiväkirja</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <script src="script.js"></script>
+    </head>
+    <body onload=init() style="background-image: url('images/img1.jpg');">
+        
+        <div id="inputDiv">
+            <h2>Uusi Harjoitus:</h2>
+
+            <div id="pvm">
+            <p>Päivämäärä:</p>
+            <input type="text" placeholder="yyyy-mm-dd"> <br>
+            </div>
+            
+            <div id="treeni">
+            <p>MATKA</p>
+            <img src="images/path_icon.png" width=30><br>
+            <input type="text" size=10 placeholder="km">
+            </div>
+
+            <div id="treeni">
+            <p>AIKA</p>
+            <img src="images/clock_icon.png" width=30><br>
+            <input type="text" size=10 placeholder="min">
+            </div>
+
+            <div id="treeni">
+            <p>KESKISYKE</p>
+            <img src="images/heart_thin_icon.png" width=30><br>
+            <input type="text" size=10 placeholder="bpm">
+            </div>
+
+            <br>
+            <button id="btn" onclick="addHarjoitus()">Tallenna harjoitus</button>
+            <form>                
+                <span id="valintanapit">Tilastointi:</span>
+                <input type="radio" id="kolkyt" value="30" name="tilastointivali" checked="checked" onclick=clearAndLoad()>
+                <label for="30">30pv</label>
+                <input type="radio" id="kuuskyt" value="60" name="tilastointivali" onclick=clearAndLoad()>
+                <label for="60">60pv</label>
+                <input type="radio" id="kaikki" value="45232" name="tilastointivali" checked="checked" onclick=clearAndLoad()>
+                <label for="kaikki">Kaikki harjoitukset</label>
+            </form>
+        </div>
+
+        <div id="loki">
+            <h2>Tilaston harjoitukset:</h2>
+            <ul id="log-list">
+
+            </ul>
+            <p id="logInfo"></p>
+        </div>
+
+        <div id="tilasto">
+            <h2>Tilastot: </h2>
+            <h3 class="stat">Keskimääräinen matka: <span id="avgmatka"></span> km</h3>
+            <h3 class="stat">Harjoitusvauhti keskimäärin: <span id="avgvauhti"></span> min/km</h3>
+            <h3 class="stat">Keskimääräinen syke: <span id="avgsyke"></span> bpm</h3>
+            <p id="statInfo"></p>
+        </div>
+    </body>
+</html>
