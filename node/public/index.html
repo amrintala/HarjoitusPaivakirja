@@ -36,12 +36,14 @@
 
             <br>
             <button id="btn" onclick="addHarjoitus()">Tallenna harjoitus</button>
-            <form>
-                <span>Tilastointi:</span>
+            <form>                
+                <span id="valintanapit">Tilastointi:</span>
                 <input type="radio" id="kolkyt" value="30" name="tilastointivali" checked="checked" onclick=clearAndLoad()>
                 <label for="30">30pv</label>
                 <input type="radio" id="kuuskyt" value="60" name="tilastointivali" onclick=clearAndLoad()>
                 <label for="60">60pv</label>
+                <input type="radio" id="kaikki" value="45232" name="tilastointivali" checked="checked" onclick=clearAndLoad()>
+                <label for="kaikki">Kaikki harjoitukset</label>
             </form>
         </div>
 
