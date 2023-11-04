@@ -144,4 +144,6 @@ function createHarjoitusItem(harjoitus) {
       let infoText = document.getElementById('logInfo')
       infoText.innerHTML = 'Ei harjoituksia valitulla aikavälillä'
     }
+
+    clearAndLoad()
   }
